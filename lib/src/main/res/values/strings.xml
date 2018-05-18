@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MultiShapeView</string>
+
+    <string name="navigationbarbean_titletext_textsize">18</string>
+    <string name="navigationbarbean_arrowtext_padding">5</string>
+    <string name="navigationbarbean_buttontext_textsize">18</string>
+    <string name="navigationbarbean_onlyimage_padding">5</string>
+    <string name="navigationbarbean_onlytext_padding">5</string>
 </resources>

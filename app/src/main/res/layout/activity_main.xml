@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     android:paddingTop="200dp">
 
+    <com.easysoft.widget.banner.BannerView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:id="@+id/banner"/>
 
     <com.easysoft.widget.imgeview.MultiShapeView
         android:id="@+id/iv_circle_one"
@@ -34,5 +38,7 @@
         app:round_radius="5dp"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
+
+
 
 </RelativeLayout>
