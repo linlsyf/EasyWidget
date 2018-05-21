@@ -15,7 +15,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_margin="7dp"
-        android:background="@anim/spinner" />
+        android:background="@drawable/spinner" />
 
     <TextView
         android:id="@+id/message"
