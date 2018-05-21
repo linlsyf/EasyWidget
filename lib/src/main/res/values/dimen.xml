@@ -5,4 +5,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
 
     <dimen name="dimen_9dp">9dp</dimen>
+
+    <dimen name="wode_title_text_size_17sp">17sp</dimen>
+
+    <dimen name="spacing_line_hight">0.5dp</dimen>
+    <dimen name="navigationbar_height">45dp</dimen>
 </resources>
