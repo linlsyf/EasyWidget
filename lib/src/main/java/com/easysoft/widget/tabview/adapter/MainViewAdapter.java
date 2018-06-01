@@ -14,7 +14,7 @@ public class MainViewAdapter extends BaseAdapter {
     private int hasMsgIndex=0;
     int[]  iconImageArray  ;
     int[]  selectedIconImageArray;
-    String[]  tabNameArray;
+    String[]  tabNameArray= new String[] {"首页", "订单","资讯","设置"};
 
     public void setHasMsgIndex(int hasMsgIndex) {
         this.hasMsgIndex = hasMsgIndex;
@@ -27,8 +27,7 @@ public class MainViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 4;
-//        return 5;
+        return fragmentArray.length;
     }
 
     @Override
