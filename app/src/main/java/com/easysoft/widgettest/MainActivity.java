@@ -21,6 +21,7 @@ public  class MainActivity extends AppCompatActivity {
         private MultiShapeView mIvCircleTwo;
 
     private int[] imgs = {R.drawable.a,R.drawable.b,R.drawable.c,R.drawable.d};
+    private String[] nameArrayList = new String[] {"首页", "订单","资讯","设置"};
 
         private MultiShapeView mIvRound;
     private List<View> viewList;

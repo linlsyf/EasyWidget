@@ -49,8 +49,6 @@ public class SearchHeadView extends LinearLayout {
       View rootView=  LayoutInflater.from(mContext).inflate(R.layout.view_searchhead, this, true);
         mBackLayout=rootView.findViewById(R.id.iv_back);
         mCleanLayout=rootView.findViewById(R.id.cleanLayout);
-        mCleanLayout=rootView.findViewById(R.id.cleanLayout);
-
 
         mSearchEditText=(DelayListenerEditText)rootView.findViewById(R.id.searchEditText);
 

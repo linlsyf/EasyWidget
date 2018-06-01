@@ -14,6 +14,8 @@ public class MainViewAdapter extends BaseAdapter {
     private int hasMsgIndex=0;
     int[]  iconImageArray  ;
     int[]  selectedIconImageArray;
+    String[]  tabNameArray;
+
     public void setHasMsgIndex(int hasMsgIndex) {
         this.hasMsgIndex = hasMsgIndex;
     }
@@ -37,7 +39,8 @@ public class MainViewAdapter extends BaseAdapter {
 
     @Override
     public String[] getTextArray() {
-        return new String[] {"首页", "订单","资讯","设置"};
+        return tabNameArray;
+//        return new String[] {"首页", "订单","资讯","设置"};
 //        return new String[] {"首页", "分类", "惊喜", "购物车","我的"};
     }
 
@@ -66,6 +69,14 @@ public class MainViewAdapter extends BaseAdapter {
 
     public void setSelectedIconImageArray(int[] selectedIconImageArray) {
         this.selectedIconImageArray = selectedIconImageArray;
+    }
+
+    public String[] getTabNameArray() {
+        return tabNameArray;
+    }
+
+    public void setTabNameArray(String[] tabNameArray) {
+        this.tabNameArray = tabNameArray;
     }
 
     @Override
