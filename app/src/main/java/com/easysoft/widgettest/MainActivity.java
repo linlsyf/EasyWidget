@@ -31,28 +31,28 @@ public  class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-
-            mIvCircleOne = (MultiShapeView) findViewById(R.id.iv_circle_one);
-            mIvCircleTwo = (MultiShapeView) findViewById(R.id.iv_circle_two);
-            mIvRound  = (MultiShapeView) findViewById(R.id.iv_round);
-            mIvCircleOne.setImageResource(R.drawable.photo_one);
-            mIvCircleTwo.setImageResource(R.drawable.photo_two);
-            mIvRound.setImageDrawable(getResources().getDrawable(R.drawable.photo_three));
-
-
-            viewList = new ArrayList<View>();
-            for (int i = 0; i < imgs.length; i++) {
-                ImageView image = new ImageView(this);
-                image.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-                //璁剧疆鏄剧ず鏍煎紡
-                image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                image.setImageResource(imgs[i]);
-                viewList.add(image);
-            }
-            bannerView = (BannerView) findViewById(R.id.banner);
-            bannerView.startLoop(true);
-
-            bannerView.setViewList(viewList);
+//
+//            mIvCircleOne = (MultiShapeView) findViewById(R.id.iv_circle_one);
+//            mIvCircleTwo = (MultiShapeView) findViewById(R.id.iv_circle_two);
+//            mIvRound  = (MultiShapeView) findViewById(R.id.iv_round);
+//            mIvCircleOne.setImageResource(R.drawable.photo_one);
+//            mIvCircleTwo.setImageResource(R.drawable.photo_two);
+//            mIvRound.setImageDrawable(getResources().getDrawable(R.drawable.photo_three));
+//
+//
+//            viewList = new ArrayList<View>();
+//            for (int i = 0; i < imgs.length; i++) {
+//                ImageView image = new ImageView(this);
+//                image.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+//                //璁剧疆鏄剧ず鏍煎紡
+//                image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//                image.setImageResource(imgs[i]);
+//                viewList.add(image);
+//            }
+//            bannerView = (BannerView) findViewById(R.id.banner);
+//            bannerView.startLoop(true);
+//
+//            bannerView.setViewList(viewList);
 //        bannerView.setTransformAnim(true);
 
     }

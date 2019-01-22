@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EasyWidget.iml" filepath="$PROJECT_DIR$/EasyWidget.iml" />
+      <module fileurl="file://D:\EasyWidget\EasyWidget.iml" filepath="D:\EasyWidget\EasyWidget.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\EasyWidget\app\app.iml" filepath="D:\EasyWidget\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
+      <module fileurl="file://D:\EasyWidget\lib\lib.iml" filepath="D:\EasyWidget\lib\lib.iml" />
     </modules>
   </component>
 </project>
