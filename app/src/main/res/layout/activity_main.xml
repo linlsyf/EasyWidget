@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:paddingTop="200dp">
 
-    <SearchView
+    <com.easysoft.widget.search.SearchHeadView
         android:layout_width="match_parent"
-        android:layout_height="45dp"></SearchView>
+        android:layout_height="45dp"></com.easysoft.widget.search.SearchHeadView>
 
 
 </RelativeLayout>

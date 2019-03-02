@@ -108,7 +108,7 @@ public class SearchHeadView extends LinearLayout {
         public void onTextChanger(String text);
     }
 
-    public EditText getSearchEditText() {
+    public DelayListenerEditText getSearchEditText() {
         return mSearchEditText;
     }
 }

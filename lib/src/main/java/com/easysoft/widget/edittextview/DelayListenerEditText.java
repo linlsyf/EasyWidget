@@ -15,7 +15,7 @@ import android.widget.EditText;
    *<br>时间：2016年3月31日 下午6:12:28
    *<br>注释：用于延迟监听
  */
-public class DelayListenerEditText extends android.support.v7.widget.AppCompatEditText {
+public class DelayListenerEditText extends EditText {
 //    private String TAG = "MyEditText";  
     private static final int MSGCODE = 0x12121212;  
       private mTextWatcher textWatcher = new mTextWatcher();  
