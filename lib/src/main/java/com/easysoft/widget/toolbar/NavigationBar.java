@@ -243,10 +243,8 @@ public class NavigationBar extends RelativeLayout {
 
                 LinearLayout layout = (LinearLayout) mRLMap.get(Location.CENTER);
                 ViewGroup.LayoutParams params = layout.getLayoutParams();
-                /*间距*/
                 int margin = DensityUtil.dip2pxInt(getContext(), 5);
 //                int margin = DensityUtil.dip2pxInt(CoreApplication.getAppContext(), 5);
-                /*选择宽度大的一边*/
                 int maxSideWidth = Math.max(leftTotalWidth, rightTotalWidth);
                 int centerWidth = mWidth - (maxSideWidth + margin) * 2;
                 params.width = centerWidth;
@@ -298,9 +296,6 @@ public class NavigationBar extends RelativeLayout {
         setSingle(single, 1);
     }
 
-    /**
-     * 0--left, 1--right
-     */
     private void setSingle(boolean single, int leftRight) {
         RelativeLayout layout;
         if (leftRight == 0) {
@@ -500,15 +495,15 @@ public class NavigationBar extends RelativeLayout {
     }
 
     private View createArrowText(NavigationBarBean bean) {
-        Drawable arrow;
+        Drawable arrow=null;
         if (NavigationBarBean.Direction.LEFT == bean.getDirection()) {
             arrow = mContext.getResources().getDrawable(R.drawable.navigation_back);
         } else {
-            throw new RuntimeException("暂无此样式");
+            throw new RuntimeException("");
         }
 
         if (arrow == null) {
-            throw new RuntimeException("获取资源图片失败");
+            throw new RuntimeException("");
         }
         return createTextWithImage(
                 bean.getText(),
@@ -526,7 +521,7 @@ public class NavigationBar extends RelativeLayout {
             int drawableID = bean.getDrawableID();
             image = mContext.getResources().getDrawable(drawableID);
             if (image == null) {
-                throw new RuntimeException(drawableID + "--该ID对应的图片资源无效");
+                throw new RuntimeException(drawableID+"");
             }
         }
         return createTextWithImage(
@@ -540,7 +535,6 @@ public class NavigationBar extends RelativeLayout {
     }
 
     private TextView createTextWithImage(String text, float textSize, int textColor, NavigationBarBean.Placement placement, Drawable image, float scale, float padding) {
-        /*基础参数配置*/
         TextView textView = new TextView(mContext);
         textView.setText(text);
         textView.setTextSize(textSize);
@@ -549,7 +543,6 @@ public class NavigationBar extends RelativeLayout {
         }
         textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        /*缩放图片*/
         int imageWidth, imageHeight;
         if (scale > 0) {
             image = zoomDrawableToDrawable(mContext, image, scale);
@@ -565,7 +558,6 @@ public class NavigationBar extends RelativeLayout {
             imageWidth = image.getIntrinsicWidth();
             imageHeight = image.getIntrinsicHeight();
         }
-        /*设置图片到对应位置*/
         image.setBounds(0, 0, imageWidth, imageHeight);
         if (NavigationBarBean.Placement.LEFT_IMAGE_RIGHT_TEXT == placement) {
             textView.setCompoundDrawables(image, null, null, null);
@@ -574,10 +566,8 @@ public class NavigationBar extends RelativeLayout {
         } else {
             throw new RuntimeException("参数错误，请查看ImageTextLocation是否正确");
         }
-        /*设置图片Padding值*/
         int drawablePadding = DensityUtil.dip2pxIntNonCompat(mContext, 6);
         textView.setCompoundDrawablePadding(drawablePadding);
-        /*设置TextView的Padding值*/
         int viewPadding = DensityUtil.dip2pxIntNonCompat(mContext, padding);
         textView.setPadding(viewPadding, viewPadding, viewPadding, viewPadding);
 
@@ -596,7 +586,6 @@ public class NavigationBar extends RelativeLayout {
         if (bean.getTextColor() != 0) {
             textView.setTextColor(bean.getTextColor());
         }
-        /*设置TextView的Padding值*/
         int padding = DensityUtil.dip2pxInt(getContext(),  bean.getPadding());
         textView.setPadding(padding, padding, padding, padding);
 
@@ -614,7 +603,6 @@ public class NavigationBar extends RelativeLayout {
                 throw new RuntimeException("无法获取图片");
             }
         }
-        /*缩放图片*/
         float scale = bean.getDrawableScale();
         if (scale > 0) {
             image = zoomDrawableToDrawable(mContext, image, scale);
@@ -622,10 +610,8 @@ public class NavigationBar extends RelativeLayout {
         if (image instanceof BitmapDrawable) {
             ((BitmapDrawable) image).setTargetDensity(DensityUtil.getNonCompatDensityDpi(mContext));
         }
-        /*基础参数配置*/
         ImageView imageView = new ImageView(mContext);
         imageView.setImageDrawable(image);
-        /*设置ImageView的Padding值*/
         int padding = DensityUtil.dip2pxIntNonCompat(mContext, bean.getPadding());
         imageView.setPadding(padding, padding, padding, padding);
 

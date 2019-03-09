@@ -13,16 +13,14 @@ import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
-/**
- * Created by lindanghong on 2018/5/18.
- */
+
 
 public class BitmapUtil {
     public static Bitmap zoomBitmap(Bitmap bitmap, float scale) {
-        int width = bitmap.getWidth();// 鑾峰彇鍘熷浘鐨勫
-        int height = bitmap.getHeight();// 鑾峰彇鍘熷浘鐨勯珮
-        Matrix matrix = new Matrix();// 鍒涘缓Matrix鐭╅樀瀵硅薄
-        matrix.setScale(scale, scale);// 璁剧疆瀹介珮鐨勭缉鏀炬瘮
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        Matrix matrix = new Matrix();
+        matrix.setScale(scale, scale);
         return Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
     }
 

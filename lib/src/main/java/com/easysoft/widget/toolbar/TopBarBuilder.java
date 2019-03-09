@@ -9,12 +9,6 @@ import com.easysoft.widget.utils.ResourcesUtil;
 
 public class TopBarBuilder {
 
-    /**
-     * 生成中间文字标题
-     * @param bar 顶部栏控件
-     * @param context 上下文
-     * @param title 标题内容
-     */
     public static void buildCenterTextTitle(NavigationBar bar, Context context, String title, int...textColor) {
         float textSize = ResourcesUtil.getResourcesFloat(context, R.string.navigationbarbean_titletext_textsize);
         NavigationBarBean centerBean = new NavigationBarBean(title, textSize, textColor.length <= 0 ? 0 : textColor[0], null, 0, 0, 0, null, null);

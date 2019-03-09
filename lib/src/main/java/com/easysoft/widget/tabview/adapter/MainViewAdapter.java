@@ -4,9 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 
-/**
- * Created by chengxi on 17/4/26.
- */
+
 public class MainViewAdapter extends BaseAdapter {
 
     private Fragment[] fragmentArray;
@@ -14,7 +12,7 @@ public class MainViewAdapter extends BaseAdapter {
     private int hasMsgIndex=0;
     int[]  iconImageArray  ;
     int[]  selectedIconImageArray;
-    String[]  tabNameArray= new String[] {"首页", "订单","资讯","设置"};
+    String[]  tabNameArray= new String[] {};
 
     public void setHasMsgIndex(int hasMsgIndex) {
         this.hasMsgIndex = hasMsgIndex;
@@ -39,8 +37,7 @@ public class MainViewAdapter extends BaseAdapter {
     @Override
     public String[] getTextArray() {
         return tabNameArray;
-//        return new String[] {"首页", "订单","资讯","设置"};
-//        return new String[] {"首页", "分类", "惊喜", "购物车","我的"};
+
     }
 
     @Override

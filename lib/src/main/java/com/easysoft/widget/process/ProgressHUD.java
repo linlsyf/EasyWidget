@@ -14,18 +14,11 @@ import android.widget.TextView;
 import com.easysoft.widget.lib.R;
 
 
-/**
- * 
- *<br> 创建者：ldh
- *<br>时间：2015年11月3日 下午2:11:46
- *<br>注释：显示加载框
- *<br>
- */
 public class ProgressHUD extends Dialog {
 	
-	/**是否正在加载中*/
+
 	boolean hasinit =false;
-	/**是否正在加载中*/
+
 	boolean isshowing=false;
 	public ProgressHUD(Context context) {
 		super(context, R.style.ProgressHUD);
@@ -70,19 +63,7 @@ public class ProgressHUD extends Dialog {
 		return isshowing;
 //		return super.isShowing();
 	}
-	/**
-	 * 
-	 *<br> 创建者：ldh
-	 *<br>时间：2015年7月22日 下午4:09:53
-	 *<br>注释：
-	 *<br>@param context
-	 *<br>@param message
-	 *<br>@param indeterminate 是否可取消
-	 *<br>@param cancelable   是否屏蔽点击返回键
-	 *<br>@param cancelListener
-	 *<br>@param onKeyListener
-	 *<br>@return
-	 */
+
 	public  ProgressHUD showDialog(Context context, CharSequence message, boolean indeterminate, boolean cancelable,
                                    OnCancelListener cancelListener, OnKeyListener onKeyListener ) {
 		
@@ -114,19 +95,7 @@ public class ProgressHUD extends Dialog {
 	}	
 	
 	
-	/**
-	 * 
-	 *<br> 创建者：ldh
-	 *<br>时间：2015年7月22日 下午4:09:53
-	 *<br>注释：
-	 *<br>@param context
-	 *<br>@param message
-	 *<br>@param indeterminate	能否点击屏幕取消
-	 *<br>@param cancelable		能否点击返回键取消
-	 *<br>@param cancelListener
-	 *<br>@param onKeyListener
-	 *<br>@return
-	 */
+
 	public static ProgressHUD show(Context context, CharSequence message, boolean indeterminate, boolean cancelable,
                                    OnCancelListener cancelListener, OnKeyListener onKeyListener ) {
 		ProgressHUD dialog = new ProgressHUD(context,R.style.ProgressHUD);
@@ -176,21 +145,7 @@ public class ProgressHUD extends Dialog {
 	
 	
 	
-	
-	/**
-	 * 
-	 *<br> 创建者：ldh
-	 *<br>时间：2015年7月22日 下午4:09:53
-	 *<br>注释：自定义显示转圈图片
-	 *<br>@param context
-	 *<br>@param message
-	 *<br>@param indeterminate 是否可取消
-	 *<br>@param cancelable   是否屏蔽点击返回键
-	 *<br>@param cancelListener
-	 *<br>@param onKeyListener
-	 *<br>@param 自定义转圈界面
-	 *<br>@return
-	 */
+
 	public static ProgressHUD show(Context context, CharSequence message, boolean indeterminate, boolean cancelable,
                                    OnCancelListener cancelListener, OnKeyListener onKeyListener, int  ContentViewId) {
 		ProgressHUD dialog = new ProgressHUD(context,R.style.ProgressHUD);

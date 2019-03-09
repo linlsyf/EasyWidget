@@ -13,19 +13,14 @@ import com.easysoft.widget.lib.R;
 import com.easysoft.widget.tabview.listener.OnTabSelectedListener;
 
 
-/**
- * Created by chengxi on 17/4/26.
- */
+
 public class Tab {
 
     private Context context;
     private int index;
-    //是否被选中
     private boolean isSelected;
 
-    /**
-     *  文本信息
-     */
+
     private String text;
     private int textColor;
     private int selectedTextColor;
@@ -33,26 +28,19 @@ public class Tab {
     private int drawablePadding;
 
 
-    /**
-     *  icon信息
-     */
+
     private int iconImage;
     private int selectedIconImage;
     private int iconHeight;
     private int iconWidth;
 
-    /**
-     *  Tab布局信息
-     */
     private RelativeLayout childView;
     private LinearLayout rootView;
     private ImageView iconImageView;
     private TextView textTextView;
     private boolean hasMsg;
 
-    /**
-     *  tab选中监听
-     */
+
     private OnTabSelectedListener onTabSelectedListener;
 
     public Tab(Context context, String text, int textSize, int textColor, int selectedTextColor, int drawablePadding, int iconWidth, int iconHeight, int iconImage, int selectedIconImage, int index, boolean hasMsg) {
@@ -133,16 +121,11 @@ public class Tab {
 
     }
 
-    /**
-     * 选中Tab
-     */
+
     private void tabSelected() {
         if (onTabSelectedListener != null) onTabSelectedListener.onTabSelected(this);
     }
 
-    /**
-     * 得到rootView
-     */
     public LinearLayout getRootView() {
         return rootView;
     }

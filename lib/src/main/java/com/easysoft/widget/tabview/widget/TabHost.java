@@ -14,18 +14,13 @@ import com.easysoft.widget.tabview.listener.OnTabSelectedListener;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by chengxi on 17/4/26.
- */
+
 public class TabHost {
 
 
     private Context context;
-    /**
-     *  布局View
-     */
+
     private LinearLayout rootView;
-    //tab集合
     private List<Tab> tabList = new ArrayList<Tab>();
     private ViewPager contentViewPager;
 
@@ -91,9 +86,7 @@ public class TabHost {
         });
     }
 
-    /**
-     *  改变tabHost状态
-     */
+
     public void onChangeTabHostStatus(int index) {
         for (int i = 0, size = tabList.size(); i < size; i++) {
             Tab tab = tabList.get(i);

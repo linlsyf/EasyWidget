@@ -22,128 +22,75 @@ import android.view.View;
 import com.easysoft.widget.lib.R;
 
 
-/**
- * 支持常见的圆形，圆角矩形及其他图形
- *
- * 支持边框
- *
- * 支持按下态
- *
- * Created by debugCat on 2017/4/16.
- */
 
 public class MultiShapeView extends View {
 
     private Context mContext;
 
-    /**
-     * 显示图片
-     */
+
     private Bitmap  mBitmap;
 
-    /**
-     * Bitmap Paint
-     */
+
     private Paint   mBitmapPaint;
 
 
-    /**
-     * 边框 Paint
-     */
+
     private Paint   mBorderPaint;
 
 
-    /**
-     * 当前是否被按下
-     */
+
     private boolean mIsPressed;
 
 
     private Shader  mBitmapShader;
 
 
-    /**
-     * 变换矩阵
-     */
+
     private Matrix  mShaderMatrix;
 
-
-    /**
-     * 形状
-     */
     private int     mShape;
 
 
-    /**
-     * Rect Bitmap
-     */
     private RectF   mRcBitmap;
 
 
-    /**
-     * Rect Border
-     */
+
     private RectF   mRcBorder;
 
-    /**
-     * 圆角半径
-     */
+
     private float   mRoundRadius;
 
-    /**
-     * 边框半径
-     */
+
     private float   mBorderRadius;
 
 
-    /**
-     * 图片半径
-     */
+
     private float   mCircleRadius;
 
 
-    /**
-     * 边框color
-     */
     private int     mBorderColor;
 
 
-    /**
-     * 边框大小
-     */
+
     private int     mBorderWidth;
 
 
 
-    /**
-     * 按下态蒙层color
-     */
+
     private int     mCoverColor;
 
 
-    /**
-     * 默认BorderWidth
-     */
     private static final int DEFAULT_BORDER_WIDTH = 0;
 
-    /**
-     * 默认BorderColor
-     */
+
     private static final int DEFAULT_BORDER_COLOR = Color.TRANSPARENT;
 
-    /**
-     * 默认按下态蒙层Color
-     */
     private static final int DEFAULT_COVER_COLOR  = Color.parseColor("#40333333");
 
-    /**
-     * 默认圆角半径
-     */
+
     private static final int DEFAULT_ROUND_RADIUS = 0;
 
-    /**
-     * 默认形状
-     */
+
     public static final  int  SHAPE_REC    = 1; // 矩形
     public static final  int  SHAPE_CIRCLE = 2; // 圆形
 
@@ -237,9 +184,6 @@ public class MultiShapeView extends View {
     }
 
 
-    /**
-     * 初始化基本参数
-     */
     private void preDraw() {
 
         if (mBitmap == null) {
@@ -252,7 +196,6 @@ public class MultiShapeView extends View {
         mRcBorder.set(0, 0, getWidth(), getHeight());
         mBorderRadius = Math.min((mRcBorder.height() - mBorderWidth) / 2, (mRcBorder.width() - mBorderWidth) / 2);
 
-        //！！！注意，圆角矩形边框注意位置，否则边框和矩形之间会露出空白
         if (mShape == SHAPE_CIRCLE) {
             mRcBitmap.set(mBorderWidth, mBorderWidth, mRcBorder.width() - mBorderWidth, mRcBorder.height() - mBorderWidth);
         } else if (mShape == SHAPE_REC) {

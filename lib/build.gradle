@@ -19,13 +19,21 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
 }
+tasks.withType(JavaCompile){
+
+    options.encoding = "UTF-8"}
 publish {
     userOrg = 'linlsyf'      // bintray注册的用户名
     groupId = 'com.easysoft.widget.lib'  // 包名

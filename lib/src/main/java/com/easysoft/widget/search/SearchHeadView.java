@@ -17,11 +17,11 @@ import com.easysoft.widget.utils.StringUtils;
 
 
 public class SearchHeadView extends LinearLayout {
-    /**返回点击控件*/
+
     View mBackLayout;
-    /**清除点击控件 */
+
     View mCleanLayout;
-    /**输入框 */
+
     DelayListenerEditText mSearchEditText;
 
     Context mContext;

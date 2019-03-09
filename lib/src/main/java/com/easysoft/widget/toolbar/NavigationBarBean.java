@@ -72,18 +72,6 @@ public class NavigationBarBean {
         drawableScale = 1;
     }
 
-    /**
-     * 入参数值的类型都是dp
-     *
-     * @param text          按钮文字
-     * @param textSize      文字大小
-     * @param drawable      图片
-     * @param drawableID    图片ID
-     * @param drawableScale 图片缩放值
-     * @param padding       图片边距值
-     * @param direction     带箭头的按钮样式的箭头方向
-     * @param placement     图片文字样式的图片和文字位置
-     */
     public NavigationBarBean(String text, float textSize, Drawable drawable, int drawableID, float drawableScale, float padding, Direction direction, Placement placement) {
         this();
         this.text = text;

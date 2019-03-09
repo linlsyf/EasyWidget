@@ -15,58 +15,52 @@ import com.easysoft.widget.base.BaseCustomView;
 import com.easysoft.widget.lib.R;
 
 
-/**
- * 
- *<br> 创建者：林党宏
- *<br>时间：2016年4月20日 下午4:08:07
- *<br>注释：输入验证名界面
- */
+
 public class ValidateEdittextView extends BaseCustomView {
 
-	/** 第一位验证码 */
+
 	private TextView verifyCodeOneText;
-	/** 第一自定义光标 */
+
 	private ImageView mCursorImgOne;
-	/**第一个内容框*/
+
 	RelativeLayout mcontentOneRL;
 
-	/** 第二位验证码 */
+
 	private TextView verifyCodeTwoText;
-	/** 第二自定义光标 */
+
 	private ImageView mCursorImgTwo;
-	/**第二个内容框*/
+
 	RelativeLayout mcontentTwoRL;
 
-	/** 第三位验证码 */
+
 	private TextView verifyCodeThreeText;
-	/** 第三自定义光标 */
+
 	private ImageView mCursorImgThree;
-	/**第三个内容框*/
+
 	RelativeLayout mcontentThreeRL;
 
-	/** 第四位验证码 */
+
 	private TextView verifyCodeFourText;
-	/** 第四自定义光标 */
+
 	private ImageView mCursorImgFour;
-	/**第四个内容框*/
+
 	RelativeLayout mcontentFourRL;
 
-	/** 第五位验证码 */
+
 	private TextView verifyCodeFiveText;
-	/** 第五自定义光标 */
+
 	private ImageView mCursorImgFive;
-	/**第五个内容框*/
+
 	RelativeLayout mcontentFiveRL;
 
-	/** 第六位验证码 */
+
 	private TextView verifyCodeSixText;
-	/** 第六自定义光标 */
+
 	private ImageView mCursorImgSix;
-	/**第六个内容框*/
+
 	RelativeLayout mcontentSixRL;
 
-	/******* 实际输入的editext 其余留个textview 为显示 **********/
-	/** 输入验证码 */
+
 	private BoundEditText verifyCodeEditText;
 	public BoundEditText getVerifyCodeEditText() {
 		return verifyCodeEditText;
@@ -84,7 +78,6 @@ public class ValidateEdittextView extends BaseCustomView {
 
 		rootView = LayoutInflater.from(context).inflate(
 				R.layout.common_verify_layout, this, true);
-		// 四个输入框 只用于显示
 		verifyCodeOneText = getViewById(R.id.tv_one);
 		mCursorImgOne = getViewById(R.id.cursorImgOne);
 		 mcontentOneRL = getViewById(R.id.contentOneRL);
@@ -116,7 +109,6 @@ public class ValidateEdittextView extends BaseCustomView {
 		mcontentSixRL = getViewById(R.id.contentSixRL);
 
 
-		// 真正获得输入内容的控件 只用于显示
 		verifyCodeEditText = getViewById(R.id.et_validate);
 
 		AnimationDrawable spinner = (AnimationDrawable) mCursorImgOne.getBackground();
@@ -235,11 +227,7 @@ public class ValidateEdittextView extends BaseCustomView {
 
 	}
 
-	  /**
-	     *<br> 创建者：林党宏
-	     *<br>时间：2016/8/31 10:13
-	     *<br>注释：检查并设置光标位置
-	     */
+
 	private void checkLengthSetCursorShow(int length){
 		if (length==0){
 			mCursorImgOne.setVisibility(View.VISIBLE);
@@ -264,13 +252,7 @@ public class ValidateEdittextView extends BaseCustomView {
 		}
 	}
 
-	/**
-	 * 
-	 * <br>
-	 * 创建者：ldh <br>
-	 * 时间：2015年8月27日 下午7:45:29 <br>
-	 * 注释：获得验证码 <br>
-	 */
+
 	public String getValidateCode() {
 		return verifyCodeEditText.getText().toString();
 	}

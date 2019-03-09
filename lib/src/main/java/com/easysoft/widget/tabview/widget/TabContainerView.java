@@ -21,33 +21,22 @@ import com.easysoft.widget.tabview.tools.DisplayUtil;
  */
 public class TabContainerView extends RelativeLayout {
 
-  /**限制不回收个数*/
     private static final int PAGE_NUM =4 ;
-    /**
-     *  底部TabLayout
-     */
+
     private TabHost tabHost;
-    /**
-     *  中间ViewPager
-     */
+
     private ViewPager contentViewPager;
 
-    /**
-     *  文本属性
-     */
+
     private int textSize;
     private int textColor;
     private int selectedTextColor;
     private int drawablePadding;
-    /**
-     * 图标属性
-     */
+
     private int iconHeight;
     private int iconWidth;
 
-    /**
-     *  分割线
-     */
+
     private int divideLineColor;
     private int divideLineHeight;
 
