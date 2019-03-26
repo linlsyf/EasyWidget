@@ -49,7 +49,6 @@ public class SearchHeadView extends LinearLayout {
       View rootView=  LayoutInflater.from(mContext).inflate(R.layout.view_searchhead, this, true);
         mBackLayout=rootView.findViewById(R.id.iv_back);
         mCleanLayout=rootView.findViewById(R.id.cleanLayout);
-
         mSearchEditText=(DelayListenerEditText)rootView.findViewById(R.id.searchEditText);
 
     }
@@ -59,17 +58,14 @@ public class SearchHeadView extends LinearLayout {
         mTextChangeListener=new DelayListenerEditText.onTextChangerListener() {
             @Override
             public void onTextChanger(String text) {
-
-                mListener.onTextChanger(text);
-
+                if(mListener!=null){
+                    mListener.onTextChanger(text);
+                }
                 if (StringUtils.isEmpty(text.trim())){
                     mCleanLayout.setVisibility(View.GONE);
-
                 }else{
                     mCleanLayout.setVisibility(View.VISIBLE);
-
                 }
-
             }
         };
         mSearchEditText.setOnTextChangerListener(mTextChangeListener);
@@ -85,8 +81,6 @@ public class SearchHeadView extends LinearLayout {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE){
-
-
                     KeyboardUtils.closeKeybord(getContext(),mSearchEditText);
                     return true;
                 }
