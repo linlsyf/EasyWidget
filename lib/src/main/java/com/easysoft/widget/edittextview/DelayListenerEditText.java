@@ -10,10 +10,11 @@ import android.util.AttributeSet;
 import android.widget.EditText;
 public class DelayListenerEditText extends EditText {
     private static final int MSGCODE = 0x12121212;
-      private mTextWatcher textWatcher = new mTextWatcher();  
+      private mTextWatcher textWatcher = new mTextWatcher();
+
     private String text;
     private int msgCount = 0;
-    long delayMillis = 900;
+    long delayMillis = 1000;
 
 	public DelayListenerEditText(Context context, AttributeSet attrs) {
 		super(context, attrs);
