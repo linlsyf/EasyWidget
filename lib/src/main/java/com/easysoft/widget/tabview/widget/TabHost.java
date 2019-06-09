@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 
+import com.easysoft.widget.config.WidgetConfig;
 import com.easysoft.widget.lib.R;
 import com.easysoft.widget.tabview.adapter.BaseAdapter;
 import com.easysoft.widget.tabview.listener.OnTabSelectedListener;
@@ -101,4 +102,16 @@ public class TabHost {
         return tabList.get(index);
     }
 
+    public void resetConfig() {
+        if (WidgetConfig.getInstance().getBgColor()!=0){
+            rootView.setBackgroundColor(WidgetConfig.getInstance().getBgColor());
+        }
+        for (Tab itemTab:tabList) {
+            itemTab.setConfig( );
+
+        }
+
+
+
+    }
 }

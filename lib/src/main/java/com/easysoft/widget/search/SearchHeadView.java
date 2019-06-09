@@ -1,7 +1,9 @@
 package com.easysoft.widget.search;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.easysoft.widget.config.WidgetConfig;
 import com.easysoft.widget.edittextview.DelayListenerEditText;
 import com.easysoft.widget.lib.R;
 import com.easysoft.widget.utils.KeyboardUtils;
@@ -25,6 +28,9 @@ public class SearchHeadView extends LinearLayout {
     DelayListenerEditText mSearchEditText;
 
     Context mContext;
+
+    View  rootLayout;
+    View  imgMic;
     private onTextChangerListener mListener;
 
     public SearchHeadView(Context context) {
@@ -49,9 +55,29 @@ public class SearchHeadView extends LinearLayout {
       View rootView=  LayoutInflater.from(mContext).inflate(R.layout.view_searchhead, this, true);
         mBackLayout=rootView.findViewById(R.id.iv_back);
         mCleanLayout=rootView.findViewById(R.id.cleanLayout);
+        rootLayout=rootView.findViewById(R.id.rootLayout);
+        imgMic=rootView.findViewById(R.id.imgMic);
         mSearchEditText=(DelayListenerEditText)rootView.findViewById(R.id.searchEditText);
 
+
+
+      int bgcolor=  WidgetConfig.getInstance().getBgColor();
+      int txtcolor=  WidgetConfig.getInstance().getTextColor();
+
+       if (bgcolor!=0){
+           rootLayout.setBackgroundColor(bgcolor);
+           mSearchEditText.setBackgroundColor(bgcolor);
+           mCleanLayout.setBackgroundColor(bgcolor);
+       }
+       if (txtcolor!=0){
+           mSearchEditText.setTextColor(txtcolor);
+
+       }
+
+
+
     }
+
 
     public void initListener(){
         DelayListenerEditText.onTextChangerListener
@@ -87,6 +113,12 @@ public class SearchHeadView extends LinearLayout {
                 return false;
             }
         });
+        imgMic.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onVoiceClick();
+            }
+        });
 
     }
 
@@ -100,6 +132,7 @@ public class SearchHeadView extends LinearLayout {
 
     public interface onTextChangerListener {
         public void onTextChanger(String text);
+        public void onVoiceClick();
     }
 
     public DelayListenerEditText getSearchEditText() {

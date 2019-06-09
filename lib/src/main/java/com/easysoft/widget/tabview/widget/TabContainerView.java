@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.easysoft.widget.config.WidgetConfig;
 import com.easysoft.widget.lib.R;
 import com.easysoft.widget.tabview.adapter.BaseAdapter;
 import com.easysoft.widget.tabview.adapter.TabViewPagerAdapter;
@@ -150,6 +151,12 @@ public class TabContainerView extends RelativeLayout {
 
     public void setOnTabSelectedListener(OnTabSelectedListener onTabSelectedListener) {
         this.onTabSelectedListener = onTabSelectedListener;
+    }
+    public void  resetConfig(){
+
+        tabHost.resetConfig();
+
+
     }
 
 

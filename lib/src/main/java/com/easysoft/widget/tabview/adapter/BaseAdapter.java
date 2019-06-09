@@ -1,8 +1,8 @@
 package com.easysoft.widget.tabview.adapter;
 
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-
 
 public abstract class BaseAdapter {
 

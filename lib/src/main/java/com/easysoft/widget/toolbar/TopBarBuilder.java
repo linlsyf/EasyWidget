@@ -77,6 +77,7 @@ public class TopBarBuilder {
         buildOnlyText(bar, context, location, text, textColor);
     }
 
+
  
  
 

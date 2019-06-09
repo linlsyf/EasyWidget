@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+import com.easysoft.widget.config.WidgetConfig;
 import com.easysoft.widget.lib.R;
 import com.easysoft.widget.utils.BitmapUtil;
 import com.easysoft.widget.utils.DensityUtil;
@@ -32,7 +33,7 @@ import java.util.Set;
 public class NavigationBar extends RelativeLayout {
 
     private static final String TAG = NavigationBar.class.getSimpleName();
-
+    ArrayList<TextView>  mTextArray=new ArrayList<>();
     public enum Location {
         LEFT_FIRST(1),
         LEFT_SECOND(2),
@@ -137,13 +138,7 @@ public class NavigationBar extends RelativeLayout {
     }
 
     private void initFields() {
-//        mLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-//        float strokeWidth = mContext.getResources().getDimension(R.dimen.dividingline_width);
-//        mLinePaint.setStrokeWidth(strokeWidth);
-//        int color = mContext.getResources().getColor(R.color.black);
-//        mLinePaint.setColor(color);
         mRLMap = new HashMap<>();
-//        mDrawLine = true;
         mDuration = 500;
         mMinScaleHeight = getStatusBarHeight(getContext());
     }
@@ -274,6 +269,17 @@ public class NavigationBar extends RelativeLayout {
             }
         }
     }
+    public  void resetConfig(){
+         if (WidgetConfig.getInstance().getBgColor()!=0){
+             mRootView.setBackgroundColor(WidgetConfig.getInstance().getBgColor());
+         }
+         if (WidgetConfig.getInstance().getTextColor()!=0){
+             for (TextView itemTextView:mTextArray){
+                  itemTextView.setTextColor(WidgetConfig.getInstance().getTextColor());
+             }
+         }
+
+    }
 
 //    @Override
 //    protected void dispatchDraw(Canvas canvas) {
@@ -322,6 +328,9 @@ public class NavigationBar extends RelativeLayout {
             ((TextView) view).setText(text);
         }
     }
+
+//    public void initConfig
+
 
     public void setCenterTextColorByPosition(int position, int color) {
         View view = mRLMap.get(Location.CENTER).getChildAt(position);
@@ -579,12 +588,17 @@ public class NavigationBar extends RelativeLayout {
 
     private View createOnlyText(NavigationBarBean bean) {
         TextView textView = new TextView(mContext);
+        mTextArray.add(textView);
         textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
         textView.setText(bean.getText());
         textView.setTextSize(bean.getTextSize());
+
+
         if (bean.getTextColor() != 0) {
             textView.setTextColor(bean.getTextColor());
+        }else  if (WidgetConfig.getInstance().getTextColor()!= 0) {
+            textView.setTextColor(WidgetConfig.getInstance().getTextColor());
         }
         int padding = DensityUtil.dip2pxInt(getContext(),  bean.getPadding());
         textView.setPadding(padding, padding, padding, padding);

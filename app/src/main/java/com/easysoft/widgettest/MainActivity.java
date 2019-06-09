@@ -1,20 +1,27 @@
 package com.easysoft.widgettest;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.easysoft.widget.R;
 import com.easysoft.widget.banner.BannerView;
+import com.easysoft.widget.config.WidgetConfig;
 import com.easysoft.widget.imgeview.MultiShapeView;
+import com.easysoft.widget.search.SearchHeadView;
+import com.easysoft.widget.tabview.widget.TabContainerView;
+import com.easysoft.widget.toolbar.NavigationBar;
+import com.easysoft.widget.toolbar.TopBarBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import fragmenttrasitionextend.FragmentDyActivity;
 
-public  class MainActivity extends AppCompatActivity {
+
+public  class MainActivity extends Activity {
 
         private MultiShapeView mIvCircleOne;
 
@@ -32,28 +39,31 @@ public  class MainActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 //
-//            mIvCircleOne = (MultiShapeView) findViewById(R.id.iv_circle_one);
-//            mIvCircleTwo = (MultiShapeView) findViewById(R.id.iv_circle_two);
-//            mIvRound  = (MultiShapeView) findViewById(R.id.iv_round);
-//            mIvCircleOne.setImageResource(R.drawable.photo_one);
-//            mIvCircleTwo.setImageResource(R.drawable.photo_two);
-//            mIvRound.setImageDrawable(getResources().getDrawable(R.drawable.photo_three));
-//
-//
-//            viewList = new ArrayList<View>();
-//            for (int i = 0; i < imgs.length; i++) {
-//                ImageView image = new ImageView(this);
-//                image.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-//                //璁剧疆鏄剧ず鏍煎紡
-//                image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//                image.setImageResource(imgs[i]);
-//                viewList.add(image);
-//            }
-//            bannerView = (BannerView) findViewById(R.id.banner);
-//            bannerView.startLoop(true);
-//
-//            bannerView.setViewList(viewList);
-//        bannerView.setTransformAnim(true);
+            NavigationBar navigationBar = (NavigationBar) findViewById(R.id.toolbar);
+            TabContainerView containerView = (TabContainerView) findViewById(R.id.tabView);
+            SearchHeadView searchHeadView = (SearchHeadView) findViewById(R.id.searchHead);
+            Button btnTest = (Button) findViewById(R.id.btnTest);
+
+            TopBarBuilder.buildCenterTextTitle(navigationBar, this, "this is title", 0);
+
+            TopBarBuilder.buildOnlyText(navigationBar,this, NavigationBar.Location.RIGHT_FIRST,"change",0);
+
+
+            navigationBar.setTextColorByLocation(NavigationBar.Location.CENTER,getResources().getColor(R.color.context_bg_blue));
+
+            containerView.setBackgroundColor(getResources().getColor(R.color.black));
+            WidgetConfig  configTab= WidgetConfig.getInstance();
+            configTab.setTextColor(getResources().getColor(R.color.white));
+            containerView.resetConfig();
+
+
+            btnTest.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(MainActivity.this, FragmentDyActivity.class);
+                    MainActivity.this.startActivity(intent);
+                }
+            });
 
     }
 
