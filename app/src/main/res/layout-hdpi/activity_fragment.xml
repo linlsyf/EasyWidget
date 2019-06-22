@@ -24,7 +24,7 @@
     </LinearLayout>
 
 
-    <com.easysoft.widget.fragment.SlidingFrameLayout
+    <com.easysoft.widget.fragment.SlidingLayout
         android:id="@+id/fragment_place"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

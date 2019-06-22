@@ -19,7 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
-import com.easysoft.widget.config.WidgetConfig;
+import com.easysoft.widget.config.WidgetConfigManger;
 import com.easysoft.widget.lib.R;
 import com.easysoft.widget.utils.BitmapUtil;
 import com.easysoft.widget.utils.DensityUtil;
@@ -270,12 +270,12 @@ public class NavigationBar extends RelativeLayout {
         }
     }
     public  void resetConfig(){
-         if (WidgetConfig.getInstance().getBgColor()!=0){
-             mRootView.setBackgroundColor(WidgetConfig.getInstance().getBgColor());
+         if (WidgetConfigManger.getInstance().getiWidgetConfig().getBgColor()!=0){
+             mRootView.setBackgroundColor(WidgetConfigManger.getInstance().getiWidgetConfig().getBgColor());
          }
-         if (WidgetConfig.getInstance().getTextColor()!=0){
+         if (WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor()!=0){
              for (TextView itemTextView:mTextArray){
-                  itemTextView.setTextColor(WidgetConfig.getInstance().getTextColor());
+                  itemTextView.setTextColor(WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor());
              }
          }
 
@@ -597,8 +597,8 @@ public class NavigationBar extends RelativeLayout {
 
         if (bean.getTextColor() != 0) {
             textView.setTextColor(bean.getTextColor());
-        }else  if (WidgetConfig.getInstance().getTextColor()!= 0) {
-            textView.setTextColor(WidgetConfig.getInstance().getTextColor());
+        }else  if (WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor()!= 0) {
+            textView.setTextColor(WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor());
         }
         int padding = DensityUtil.dip2pxInt(getContext(),  bean.getPadding());
         textView.setPadding(padding, padding, padding, padding);

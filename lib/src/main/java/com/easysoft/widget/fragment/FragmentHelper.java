@@ -28,7 +28,9 @@ public class FragmentHelper {
 	 * 
 	 */
 	public static void popBackFragment(FragmentActivity activity) {
-		activity.getFragmentManager().popBackStack();
+		activity.getSupportFragmentManager().popBackStack();
+
+//		activity.getFragmentManager().popBackStack();
 
 	}
 	/**
@@ -64,6 +66,17 @@ public class FragmentHelper {
 
 		   }
 		fragmentTransactionExtended.addTransition(animationsType);
+
+
+		if (bundle != null) {
+			if (!showFragment.isRemoving()) {
+				try {
+					showFragment.setArguments(bundle);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
 		fragmentTransactionExtended.commit();
 
 	}

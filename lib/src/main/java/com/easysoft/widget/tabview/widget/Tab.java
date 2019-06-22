@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.easysoft.widget.config.WidgetConfig;
+import com.easysoft.widget.config.WidgetConfigManger;
 import com.easysoft.widget.lib.R;
 import com.easysoft.widget.tabview.listener.OnTabSelectedListener;
 
@@ -97,8 +97,8 @@ public class Tab {
          *  text view
          */
         textTextView.setText(text);
-          if (WidgetConfig.getInstance().getTextColor()!=0){
-              textTextView.setTextColor(WidgetConfig.getInstance().getTextColor());
+          if (WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor()!=0){
+              textTextView.setTextColor(WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor());
           }else{
               textTextView.setTextColor(textColor);
           }
@@ -155,8 +155,8 @@ public class Tab {
     }
 
     public void setConfig() {
-        if (WidgetConfig.getInstance().getTextColor()!=0){
-            textTextView.setTextColor(isSelected ? WidgetConfig.getInstance().getSelectedTextColor() : WidgetConfig.getInstance().getTextColor());
+        if (WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor()!=0){
+            textTextView.setTextColor(isSelected ? WidgetConfigManger.getInstance().getiWidgetConfig().getSelectedTextColor() : WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor());
         }
 
 

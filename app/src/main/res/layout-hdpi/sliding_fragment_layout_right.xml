@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.easysoft.widget.fragment.SlidingFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.easysoft.widget.fragment.SlidingLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back2" >
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="this is test"
+        />
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</com.easysoft.widget.fragment.SlidingFrameLayout>
+</com.easysoft.widget.fragment.SlidingLayout>

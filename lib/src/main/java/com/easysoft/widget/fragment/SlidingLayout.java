@@ -6,21 +6,22 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
-public class SlidingFrameLayout extends FrameLayout {
+public class SlidingLayout extends LinearLayout {
     private float yFraction = 0;
     private float xFraction = 0;
 
 
-    public SlidingFrameLayout(Context context) {
+    public SlidingLayout(Context context) {
         super(context);
     }
 
-    public SlidingFrameLayout(Context context, AttributeSet attrs) {
+    public SlidingLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public SlidingFrameLayout(Context context, AttributeSet attrs, int defStyle) {
+    public SlidingLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
