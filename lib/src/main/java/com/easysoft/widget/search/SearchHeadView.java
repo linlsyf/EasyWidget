@@ -64,7 +64,6 @@ public class SearchHeadView extends LinearLayout {
 
       int bgcolor=  WidgetConfigManger.getInstance().getiWidgetConfig().getBgColor();
       int txtcolor=  WidgetConfigManger.getInstance().getiWidgetConfig().getTextColor();
-        bgcolor=getResources().getColor(R.color.black);
        if (bgcolor!=0){
            searchContentView.setBackgroundColor(bgcolor);
            //setBackgroundColor(bgcolor);

@@ -7,8 +7,9 @@ import android.util.Log;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
-public class SlidingLayout extends LinearLayout {
+public class SlidingLayout extends RelativeLayout {
     private float yFraction = 0;
     private float xFraction = 0;
 
