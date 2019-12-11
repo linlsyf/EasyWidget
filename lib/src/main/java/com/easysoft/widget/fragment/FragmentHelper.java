@@ -49,35 +49,42 @@ public class FragmentHelper {
 		}
 	}
 
-	public static void showFrag(FragmentActivity activity, int resourceId,
-								Fragment showFragment, Bundle bundle){
+	public static void showFrag(final FragmentActivity activity,final int resourceId,
+								final Fragment showFragment,final Bundle bundle){
 
 
-		FragmentManager manager = activity.getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = manager.beginTransaction();
 
-		Fragment from=manager.findFragmentById(resourceId);
+		  activity.runOnUiThread(new Runnable() {
+			  @Override
+			  public void run() {
+				  FragmentManager manager = activity.getSupportFragmentManager();
+				  FragmentTransaction fragmentTransaction = manager.beginTransaction();
 
-		FragmentTransactionExtended fragmentTransactionExtended = new FragmentTransactionExtended(activity, fragmentTransaction, from, showFragment,resourceId);
-		  int animationsType=FragmentTransactionExtended.SLIDE_HORIZONTAL;
-		   if (bundle!=null&&bundle.containsKey(AnimationsType)){
+				  Fragment from=manager.findFragmentById(resourceId);
 
-			   animationsType=bundle.getInt(AnimationsType);
+				  FragmentTransactionExtended fragmentTransactionExtended = new FragmentTransactionExtended(activity, fragmentTransaction, from, showFragment,resourceId);
+				  int animationsType=FragmentTransactionExtended.SLIDE_HORIZONTAL;
+				  if (bundle!=null&&bundle.containsKey(AnimationsType)){
 
-		   }
-		fragmentTransactionExtended.addTransition(animationsType);
+					  animationsType=bundle.getInt(AnimationsType);
+
+				  }
+				  fragmentTransactionExtended.addTransition(animationsType);
 
 
-		if (bundle != null) {
-			if (!showFragment.isRemoving()) {
-				try {
-					showFragment.setArguments(bundle);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		fragmentTransactionExtended.commit();
+				  if (bundle != null) {
+					  if (!showFragment.isRemoving()) {
+						  try {
+							  showFragment.setArguments(bundle);
+						  } catch (Exception e) {
+							  e.printStackTrace();
+						  }
+					  }
+				  }
+				  fragmentTransactionExtended.commit();
+			  }
+		  });
+
 
 	}
 	/**
